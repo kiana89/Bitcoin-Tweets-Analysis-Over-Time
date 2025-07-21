@@ -197,3 +197,10 @@ To understand the temporal patterns and user behaviors behind Bitcoin-related tw
 * Bitcoin market sentiment over time
 * User behavior tracking
 * Verified vs non-verified user impact
+* 
+
+---
+
+### Bitcoin Tweets Analysis Review
+To analyze individuals' influence on the Bitcoin market, metrics such as follower count and account verification are crucial. Users with a high number of followers and verified accounts tend to be more influential. A sudden spike in average followers during a specific period may indicate the involvement of prominent figures. Additionally, a higher percentage of verified users in a given timeframe suggests a stronger potential market impact. Analyzing the tweet source also helps distinguish real users from bots.
+
