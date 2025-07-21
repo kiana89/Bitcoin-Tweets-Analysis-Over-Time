@@ -1,4 +1,4 @@
-## Bitcoin Tweets Analysis with RAPIDS & Kaggle
+## Bitcoin Tweets Analysis with Kaggle
 
 This project focuses on extracting and preparing a dataset of Bitcoin-related tweets for further analysis using **GPU-accelerated computing with RAPIDS cuDF** and visualization tools like **Matplotlib** and **Seaborn**.
 
