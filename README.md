@@ -126,3 +126,74 @@ The dataset undergoes multiple cleaning steps to ensure consistency, convert typ
 * Displayed `info()` and `describe()` post-cleaning to summarize structure and statistics.
 * Printed final memory usage for comparison.
 
+---
+
+## Bitcoin Tweets Statistical and Probability Analysis
+
+This project performs **descriptive and visual analysis** of Bitcoin-related tweets using statistical and probability concepts. The dataset contains information about tweets, including user metadata such as number of followers, friends, favourites, tweet sources, and verification status.
+
+###  Objective
+
+To understand the temporal patterns and user behaviors behind Bitcoin-related tweets using **annual, monthly, and daily** breakdowns. It includes statistics like average followers, tweet counts, and percentage of verified users over time.
+
+---
+
+###  Steps Performed
+
+#### 1. **Annual Analysis**
+
+* Aggregates and describes user metadata by year.
+* Visualizes:
+
+  * Number of tweets per year.
+  * Average followers, friends, and favourites per year.
+  * Percentage of verified users per year.
+  * Top 5 tweet sources per year.
+
+#### 2. **Monthly Analysis**
+
+* Groups data by year and month.
+* Visualizes trends similar to annual analysis but at monthly granularity.
+
+#### 3. **Daily Sample Analysis**
+
+* Analyzes a sample week of data from the first year in the dataset.
+* Shows:
+
+  * Daily tweet counts.
+  * Average followers.
+  * Verified user rate per day.
+
+---
+
+###  Visualizations
+
+* All trends are plotted using `seaborn` and `matplotlib`:
+
+  * Line plots for tweet counts and user statistics.
+  * Grids and date formatters improve readability.
+
+---
+
+###  Tools and Libraries
+
+* **pandas / cuDF**: Data manipulation
+* **seaborn / matplotlib**: Visualization
+* **datetime / pandas Periods**: Date processing
+
+---
+
+###  Notes
+
+* The dataset is first converted from cuDF (GPU DataFrame) to pandas for compatibility.
+* Descriptive statistics (`.describe()`) are used to show data distributions.
+* Sources are optionally plotted if available.
+
+---
+
+###  Example Use Cases
+
+* Social media trend analysis
+* Bitcoin market sentiment over time
+* User behavior tracking
+* Verified vs non-verified user impact
