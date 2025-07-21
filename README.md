@@ -61,7 +61,6 @@ df = cudf.read_csv("/content/Bitcoin_tweets.csv")
 
 ---
 
-
 ###  Initial Data Exploration 
 
 * **Preview the dataset:**
