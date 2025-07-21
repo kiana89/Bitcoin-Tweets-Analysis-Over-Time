@@ -100,11 +100,11 @@ The dataset undergoes multiple cleaning steps to ensure consistency, convert typ
   * Lowercasing all text
   * Removing URLs, mentions (@), hashtags (#), special characters, extra spaces, and HTML entities.
 
-#### ✅ Boolean Fixes
+####  Boolean Fixes
 
 * Converted `'user_verified'` column to proper boolean format (`True/False`) from strings like `"True"` or integers `1/0`.
 
-#### 🧩 Missing Value Handling
+####  Missing Value Handling
 
 * Filled missing values in:
 
@@ -113,20 +113,16 @@ The dataset undergoes multiple cleaning steps to ensure consistency, convert typ
   * `'source'` → with `"Unknown Source"`
 * Checked for sparse data (over 50% missing) to consider converting to sparse format.
 
-#### 🗂️ Categorical Conversion
+####  Categorical Conversion
 
 * Converted `'user_location'` and `'source'` to **categorical** types if unique values < 50% of total rows.
 
-#### 🕒 Date Formatting
+####  Date Formatting
 
 * Converted `'date'` and `'user_created'` columns from string to proper `datetime` objects using Pandas and cuDF.
 
-#### 📈 Final Overview
+####  Final Overview
 
 * Displayed `info()` and `describe()` post-cleaning to summarize structure and statistics.
 * Printed final memory usage for comparison.
-
----
-
-Would you like a Markdown version (`README.md` section) or a Python docstring version inside your notebook file too?
 
