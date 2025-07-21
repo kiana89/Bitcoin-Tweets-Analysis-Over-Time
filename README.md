@@ -72,21 +72,20 @@ df = cudf.read_csv("/content/Bitcoin_tweets.csv")
 * **Summary statistics:**
   Use `df.describe()` to get statistical insights such as mean, standard deviation, min/max values for numeric columns.
 
-برای گیت‌هاب، این کد طولانی و مهم برای مرحله «پاک‌سازی داده‌ها» (Data Cleaning) بهتر است به صورت خلاصه، منظم و مستند توضیح داده شود. در ادامه یک نسخه حرفه‌ای، خلاصه و خوانا به زبان انگلیسی برای این بخش نوشته‌ام:
 
 ---
 
-### 🧹 Data Cleaning Summary
+###  Data Cleaning Summary
 
 The dataset undergoes multiple cleaning steps to ensure consistency, convert types properly, and prepare for analysis:
 
 ---
 
-#### 📏 Memory Optimization
+####  Memory Optimization
 
 * Calculated initial and final DataFrame size in **GB** to monitor memory usage improvements.
 
-#### 🔢 Numeric Conversion
+####  Numeric Conversion
 
 * Converted the following columns to numeric:
 
@@ -94,7 +93,7 @@ The dataset undergoes multiple cleaning steps to ensure consistency, convert typ
   * Non-numeric values were coerced to `NaN`.
   * Converted final types to `float32` or `uint32`.
 
-#### 🧼 Textual Cleanup
+####  Textual Cleanup
 
 * Cleaned text-based fields like `'text'` and `'user_description'` by:
 
