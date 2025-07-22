@@ -1,79 +1,83 @@
-## Bitcoin Tweets Analysis with Kaggle and Python
+##  Bitcoin Tweets Analysis with RAPIDS & Kaggle
 
-This project performs a comprehensive **statistical analysis of Bitcoin-related tweets** using GPU-accelerated libraries like **RAPIDS cuDF**, and data visualization tools such as **Matplotlib** and **Seaborn**.
+This project focuses on extracting and preparing a dataset of Bitcoin-related tweets for further analysis using **GPU-accelerated computing with RAPIDS cuDF** and visualization tools like **Matplotlib** and **Seaborn**.
 
-###  Setup and Data Extraction
+###  Installation & Setup
 
-* Clones the RAPIDS utility repository and installs required dependencies.
-* Loads Bitcoin-related tweet data from [Kaggle dataset](https://www.kaggle.com/datasets/kaushiksuresh147/bitcoin-tweets).
-* Uses `cuDF` for GPU-accelerated dataframe operations.
+1. **Clone RAPIDS Utilities**
+   We clone the RAPIDS CSP utility repository and run a script to install required RAPIDS packages on Colab.
 
-###  Data Cleaning
+   ```python
+   !git clone https://github.com/rapidsai/rapidsai-csp-utils.git
+   !python rapidsai-csp-utils/colab/pip-install.py
+   ```
 
-* Converts string-based numeric columns (`user_followers`, `user_friends`, `user_favourites`) to appropriate types.
-* Cleans text columns like `text` and `user_description` by:
+2. **Install Kaggle API**
+   Quietly install the Kaggle Python package to download datasets.
 
-  * Removing URLs, mentions, hashtags, special characters.
-  * Standardizing text to lowercase.
-* Handles missing values in critical columns.
-* Converts date fields (`date`, `user_created`) to datetime format.
-* Optimizes categorical columns like `source` and `user_location`.
+   ```python
+   !pip install kaggle --quiet
+   ```
 
-###  Statistical & Temporal Analysis
+3. **Set Up Kaggle API Credentials**
+   We copy the `kaggle.json` file (you must upload it to your Colab environment first) to the appropriate directory and set the permissions:
 
-#### **Annual and Monthly Trends**
+   ```python
+   !mkdir ~/.kaggle
+   !cp kaggle.json ~/.kaggle/
+   !chmod 600 ~/.kaggle/kaggle.json
+   ```
 
-* Tracks:
+4. **Download the Dataset from Kaggle**
+   Using the Kaggle API, we download the `bitcoin-tweets` dataset:
 
-  * Number of tweets
-  * Average followers, friends, favourites
-  * Percentage of verified users
-  * Tweet source distribution
-* Visualized using `line plots` and `bar plots`.
+   ```python
+   !kaggle datasets download -d kaushiksuresh147/bitcoin-tweets
+   ```
 
-#### **Daily Sample Analysis**
+5. **Extract the Dataset**
+   Unzips the downloaded file to access the CSV data:
 
-* Analyzes a one-week window for daily trends in:
-
-  * Tweet frequency
-  * User metrics
-  * Verification status
-
-#### **Distribution Analysis**
-
-* Violin plots and bar plots of user metrics across:
-
-  * Tweet date
-  * User creation date
-
-#### **Correlation and Pair Plot**
-
-* Calculates correlation matrix between user metrics and time-based features.
-* Displays relationships using:
-
-  * Heatmap
-  * Pair plot (sampled)
-
-###  Libraries Used
-
-* `cudf` (from RAPIDS)
-* `pandas`
-* `matplotlib`
-* `seaborn`
-* `re` (regex for text cleaning)
+   ```python
+   !unzip bitcoin-tweets.zip
+   ```
 
 ---
 
-###  How to Run
+### 🗃 Data Extraction
 
-1. Clone the repo in Google Colab or local machine with GPU.
-2. Upload `kaggle.json` for API access.
-3. Run the notebook step by step.
+We now read and explore the dataset using `cuDF`, the RAPIDS version of Pandas optimized for GPU acceleration.
+
+```python
+import cudf
+import matplotlib.pyplot as plt
+import seaborn as sns
+import pandas as pd
+import matplotlib.dates as mdates
+
+# Read CSV using cuDF
+df = cudf.read_csv("/content/Bitcoin_tweets.csv")
+```
 
 ---
 
-###  Outcomes
+###  Initial Exploration
 
-* Understand temporal dynamics of Bitcoin discussions on Twitter.
-* Identify patterns in user engagement and profile characteristics.
-* Highlight the evolution of influence (via followers, verification, etc.) in the crypto community.
+1. **View the First Few Rows**
+
+   ```python
+   df
+   ```
+
+2. **Dataset Info (Types, Nulls, etc.)**
+
+   ```python
+   df.info()
+   ```
+
+3. **Descriptive Statistics**
+
+   ```python
+   df.describe()
+   ```
+
