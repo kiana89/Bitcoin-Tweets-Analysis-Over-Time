@@ -126,3 +126,85 @@ The dataset undergoes multiple cleaning steps to ensure consistency, convert typ
 * Printed final memory usage for comparison.
 
 ---
+
+##  Statistical & Probabilistic Analysis of Bitcoin Tweets
+
+This section performs **temporal**, **numerical**, and **correlation-based** analyses of Bitcoin-related tweets, focusing on user metrics, activity patterns, and visualization of trends.
+
+---
+
+###  1. Annual & Monthly Time Series Analysis
+
+* **Grouped by `year` and `year_month`:**
+
+  * Descriptive statistics for:
+
+    * `user_followers`
+    * `user_friends`
+    * `user_favourites`
+  * Visualized trends using line plots:
+
+    *  Number of tweets
+    *  Average followers
+    *  Average friends
+    *  Average favourites
+    *  Percentage of verified users
+  * Tracked **top tweet sources** per year using grouped line charts.
+
+---
+
+###  2. Daily Sample Analysis
+
+* Selected a **7-day sample** from the earliest year in the dataset.
+* Displayed daily statistics and line charts for:
+
+  * Tweet volume
+  * Average followers
+  * Verified user rate
+
+---
+
+###  3. Violin & Bar Plot Distribution
+
+* **Violin plots** by:
+
+  * Tweet `date` (monthly)
+  * `user_created` year
+* **Bar plots** for average:
+
+  * `user_followers`
+  * `user_friends`
+  * `user_favourites`
+  * Aggregated by both **tweet date** and **user creation date**.
+
+---
+
+###  4. Correlation Heatmap
+
+* Extracted **date-related features** from `date` and `user_created`:
+
+  * Year, Month, Day, Weekday, Hour
+* Generated a **correlation heatmap** among:
+
+  * User metrics (`followers`, `friends`, `favourites`)
+  * Time components of tweet and user creation
+
+---
+
+###  5. Pairwise Distribution (Pair Plot)
+
+* Selected a 1,000-row sample from:
+
+  * All numeric and datetime-derived features
+* Used `seaborn.pairplot()` to visualize pairwise relationships.
+
+---
+
+ This analysis helps reveal:
+
+* How user engagement changed over time
+* Whether followers or favourites are correlated with post frequency or time
+* Patterns in verified user behavior
+* Impact of user creation date on tweet activity
+
+---
