@@ -72,3 +72,57 @@ df = cudf.read_csv("/content/Bitcoin_tweets.csv")
 * **Summary statistics:**
   Use `df.describe()` to get statistical insights such as mean, standard deviation, min/max values for numeric columns.
 
+---
+
+###  Data Cleaning Summary
+
+The dataset undergoes multiple cleaning steps to ensure consistency, convert types properly, and prepare for analysis:
+
+---
+
+####  Memory Optimization
+
+* Calculated initial and final DataFrame size in **GB** to monitor memory usage improvements.
+
+####  Numeric Conversion
+
+* Converted the following columns to numeric:
+
+  * `'user_followers'`, `'user_friends'`, and `'user_favourites'`
+  * Non-numeric values were coerced to `NaN`.
+  * Converted final types to `float32` or `uint32`.
+
+####  Textual Cleanup
+
+* Cleaned text-based fields like `'text'` and `'user_description'` by:
+
+  * Lowercasing all text
+  * Removing URLs, mentions (@), hashtags (#), special characters, extra spaces, and HTML entities.
+
+####  Boolean Fixes
+
+* Converted `'user_verified'` column to proper boolean format (`True/False`) from strings like `"True"` or integers `1/0`.
+
+####  Missing Value Handling
+
+* Filled missing values in:
+
+  * `'user_description'`, `'user_location'` → with mode or empty string
+  * `'hashtags'` → with empty string
+  * `'source'` → with `"Unknown Source"`
+* Checked for sparse data (over 50% missing) to consider converting to sparse format.
+
+####  Categorical Conversion
+
+* Converted `'user_location'` and `'source'` to **categorical** types if unique values < 50% of total rows.
+
+####  Date Formatting
+
+* Converted `'date'` and `'user_created'` columns from string to proper `datetime` objects using Pandas and cuDF.
+
+####  Final Overview
+
+* Displayed `info()` and `describe()` post-cleaning to summarize structure and statistics.
+* Printed final memory usage for comparison.
+
+---
