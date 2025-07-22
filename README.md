@@ -208,3 +208,30 @@ This section performs **temporal**, **numerical**, and **correlation-based** ana
 * Impact of user creation date on tweet activity
 
 ---
+
+##  Influential Users in Bitcoin Tweet Trends
+
+Based on data analysis, certain types of Twitter users tend to have a greater impact on Bitcoin-related discussions and potentially on its price movements. Key findings include:
+
+1. ** Verified Users**
+
+   * Typically celebrities or official organizations.
+   * Their tweets gain more attention and correlate with Bitcoin price volatility.
+
+2. ** High-Follower Accounts**
+
+   * Users with over 100K followers significantly influence market sentiment.
+   * A positive correlation exists between follower count and tweet engagement.
+
+3. ** Older Accounts**
+
+   * Users with accounts created before 2017 are generally more trusted in the crypto community.
+
+4. ** Tweet Source (Professional Tools)**
+
+   * Tweets sent from platforms like `Twitter Web App` or `TweetDeck` are often more impactful, likely due to professional or organizational usage.
+
+5. ** High Engagement Users**
+
+   * Users with higher average likes and retweets have stronger influence.
+   * Indicates higher reach and trust among the crypto audience.
