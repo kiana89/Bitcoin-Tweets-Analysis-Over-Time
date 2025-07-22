@@ -44,7 +44,7 @@ This project focuses on extracting and preparing a dataset of Bitcoin-related tw
 
 ---
 
-### 🗃 Data Extraction
+###  Data Extraction
 
 We now read and explore the dataset using `cuDF`, the RAPIDS version of Pandas optimized for GPU acceleration.
 
@@ -61,23 +61,14 @@ df = cudf.read_csv("/content/Bitcoin_tweets.csv")
 
 ---
 
-###  Initial Exploration
+### Initial Data Exploration 
 
-1. **View the First Few Rows**
+* **Preview the dataset:**
+  Display the first few rows to get a general sense of the data structure.
 
-   ```python
-   df
-   ```
+* **Dataset information:**
+  Check data types, memory usage, and missing values using `df.info()`.
 
-2. **Dataset Info (Types, Nulls, etc.)**
-
-   ```python
-   df.info()
-   ```
-
-3. **Descriptive Statistics**
-
-   ```python
-   df.describe()
-   ```
+* **Summary statistics:**
+  Use `df.describe()` to get statistical insights such as mean, standard deviation, min/max values for numeric columns.
 
