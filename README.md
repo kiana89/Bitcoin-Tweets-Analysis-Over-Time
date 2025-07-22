@@ -19,7 +19,7 @@ This project performs a comprehensive **statistical analysis of Bitcoin-related 
 * Converts date fields (`date`, `user_created`) to datetime format.
 * Optimizes categorical columns like `source` and `user_location`.
 
-### 📈 Statistical & Temporal Analysis
+###  Statistical & Temporal Analysis
 
 #### **Annual and Monthly Trends**
 
@@ -54,7 +54,7 @@ This project performs a comprehensive **statistical analysis of Bitcoin-related 
   * Heatmap
   * Pair plot (sampled)
 
-### 📦 Libraries Used
+###  Libraries Used
 
 * `cudf` (from RAPIDS)
 * `pandas`
@@ -64,23 +64,7 @@ This project performs a comprehensive **statistical analysis of Bitcoin-related 
 
 ---
 
-### 📁 Folder Structure (if you create one)
-
-```
-.
-├── data/
-│   └── Bitcoin_tweets.csv
-├── notebooks/
-│   └── bitcoin_tweets_analysis.ipynb
-├── images/
-│   └── (optional: save plots here)
-├── README.md
-└── requirements.txt
-```
-
----
-
-### 📌 How to Run
+###  How to Run
 
 1. Clone the repo in Google Colab or local machine with GPU.
 2. Upload `kaggle.json` for API access.
@@ -88,13 +72,7 @@ This project performs a comprehensive **statistical analysis of Bitcoin-related 
 
 ---
 
-### 📊 Sample Visualizations
-
-You can add screenshots of a few plots here, like the line plot of number of tweets per year or the correlation heatmap.
-
----
-
-### ✅ Outcomes
+###  Outcomes
 
 * Understand temporal dynamics of Bitcoin discussions on Twitter.
 * Identify patterns in user engagement and profile characteristics.
