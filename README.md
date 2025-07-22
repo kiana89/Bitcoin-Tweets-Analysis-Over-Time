@@ -200,6 +200,10 @@ This section performs **temporal**, **numerical**, and **correlation-based** ana
 
 ---
 
+>  **Note:** All the charts generated during this analysis are saved in the file named **`chart_pic.zip`** for easy download and reference.
+
+---
+
  This analysis helps reveal:
 
 * How user engagement changed over time
